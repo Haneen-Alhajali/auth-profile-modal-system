@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Information</title>
+</head>
+<body>
+    
+    <main>
+        <h2>User Information</h2>
+
+        <form action="modal.html" method="GET">
+
+            <div class="form-group">
+                <label for="fName">Full Name: </label>
+                <input type="text" name="fName" id="fName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pic">Profile Picture: </label>
+                <input type="file" name="pic" id="pic" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Bio: </label>
+                <textarea name="bio" id="bio" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="skill">Primary Skill: </label>
+                <select id="skill" required>
+                    <option value="">Select One</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Backend">Backend</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="Data Science">Data Science</option>
+                </select>   
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms"> I accept the <a href="">Terms and Conditions</a> </label><br>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="newsletter" name="newsletter" >
+                <label for="newsletter">Subscribe to Newsletter </label><br>
+            </div>
+
+            <input type="submit" value="View Profile">
+            <input type="reset" value="Reset">
+        </form>    
+    </main>
+
+
+    <div class="modal-overlay" hidden>
+        <section>
+            <h2>Your Profile</h2>
+        </section>
+    </div>
+</body>
+</html>

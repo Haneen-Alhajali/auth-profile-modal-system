@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login — DevProfile</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
+    
+    <link rel="stylesheet" href="assets/styles/variables.css">
+    <link rel="stylesheet" href="assets/styles/layout.css">
+    <link rel="stylesheet" href="assets/styles/components.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
 </head>
-<body>
+
+<body class="login-page">
+
+    <!-- Navigation -->
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">SERVICE</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-    
-    <main class="login-card">
-        <h2>Login</h2>
 
-        <form action="profile.html" method="POST">
-            
-            <div class="input-box">
-                <label for="email">Email: </label>
-                <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
-                <i class="fa-regular fa-envelope"></i>
-            </div>
+    <!-- login card -->
+    <div class="login-wrapper">
+        <main class="login-card glass">
 
-            <div class="input-box"></div>
-                <label for="pas">Password: </label>
-                <input type="password" name="password" id="pas" required minlength="8">
-                <i class="fa-solid fa-lock"></i>
-            </div>
+            <h1 class="card-title">Welcome back</h1>
+            <p class="card-subtitle">Sign in to your developer profile</p>
 
-            <div class="options">
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Remember me </label>
-                <a href="#">Forgot password?</a>
-            </div>
+            <form action="profile.html" method="GET" class="login-form">
 
-            <button type="submit">Login</button>
+                <div class="input-box">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <i class="fa-regular fa-envelope field-icon"></i>
+                </div>
 
-            <p>Don't have an account? <a href="#">Register</a></p>
-        </form>
-    </main>
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Min. 8 characters" required minlength="8">
+                    <i class="fa-solid fa-lock field-icon"></i>
+                </div>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="remember" id="remember">
+                        Remember me
+                    </label>
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-primary">Sign in</button>
+
+            </form>
+
+            <div class="divider"></div>
+
+            <p class="card-footer">
+                Don't have an account? <a href="#">Create one</a>
+            </p>
+
+        </main>
+    </div>
+
 </body>
 </html>
 

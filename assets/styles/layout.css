@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ────────────────── Login Page ───────────────────────────── */
+.login-page {
+  background: url("../images/bg.jpg") no-repeat center center / cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+
+/* ──────────────────── Navbar ─────────────────────────────── */
+.navbar {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 24px 48px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+}
+
+/* ─────────────────── Login Card ───────────────── */
+.login-wrapper {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 60px;
+  width: 100%;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ────────────────────── Profile Page ─────────────────────── */
+.profile-page {
+  background: url("../images/pbg.jpg") no-repeat center center / cover;
+  position: relative;
+}
+
+.profile-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 680px;
+}
+
+/* ───────────── Profile form grid ────────────── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+}
+
+.form-grid .form-group.full {
+  grid-column: 1 / -1;
+}
+
+/* ────────────────── Modal overlay ────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.modal-card {
+  background: #0f1624;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+}
+
+
+.modal-overlay:target {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ────────────────── login & profile overlay ────────────────────────── */
+
+.login-page::before , .profile-page::before  {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(5,10,22,0.55) 0%, rgba(10,20,50,0.45) 100%);
+  pointer-events: none;
+  z-index: 0;
+}

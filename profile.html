@@ -1,63 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile Information</title>
-</head>
-<body>
+    <title>Profile Setup — DevProfile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     
-    <main>
-        <h2>User Information</h2>
+    <link rel="stylesheet" href="assets/styles/variables.css">
+    <link rel="stylesheet" href="assets/styles/layout.css">
+    <link rel="stylesheet" href="assets/styles/components.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+</head>
 
-        <form action="modal.html" method="GET">
+<body class="profile-page">
 
-            <div class="form-group">
-                <label for="fName">Full Name: </label>
-                <input type="text" name="fName" id="fName" required>
-            </div>
+    <!-- Profile form wrapper -->
+    <div class="profile-wrapper">
+        <main class="profile-card glass">
 
-            <div class="form-group">
-                <label for="pic">Profile Picture: </label>
-                <input type="file" name="pic" id="pic" accept="image/*">
-            </div>
+            <h1 class="card-title">Build your profile</h1>
+            <p class="card-subtitle">Tell the community who you are</p>
 
-            <div class="form-group">
-                <label for="bio">Bio: </label>
-                <textarea name="bio" id="bio" rows="4"></textarea>
-            </div>
+            <form id="profile-form">
 
-            <div class="form-group">
-                <label for="skill">Primary Skill: </label>
-                <select id="skill" required>
-                    <option value="">Select One</option>
-                    <option value="Frontend">Frontend</option>
-                    <option value="Backend">Backend</option>
-                    <option value="DevOps">DevOps</option>
-                    <option value="Data Science">Data Science</option>
-                </select>   
-            </div>
+                <div class="form-grid">
 
-            <div class="form-group">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms"> I accept the <a href="">Terms and Conditions</a> </label><br>
-            </div>
+                    <!-- Full Name  -->
+                    <div class="form-group full">
+                        <label for="fName">Full name</label>
+                        <input type="text" id="fName" name="fName"  required>
+                    </div>
 
-            <div class="form-group">
-                <input type="checkbox" id="newsletter" name="newsletter" >
-                <label for="newsletter">Subscribe to Newsletter </label><br>
-            </div>
+                    <!-- Skill  -->
+                    <div class="form-group">
+                        <label for="skill">Primary skill</label>
+                        <select id="skill" name="skill" required>
+                            <option value="">Select one</option>
+                            <option value="Frontend">Frontend</option>
+                            <option value="Backend">Backend</option>
+                            <option value="DevOps">DevOps</option>
+                            <option value="Data Science">Data Science</option>
+                        </select>
+                    </div>
 
-            <input type="submit" value="View Profile">
-            <input type="reset" value="Reset">
-        </form>    
-    </main>
+                    <!-- Profile picture -->
+                    <div class="form-group">
+                        <label for="pic">Profile picture</label>
+                        <input type="file" id="pic" name="pic" accept="image/*">
+                    </div>
 
+                    <!-- Bio  -->
+                    <div class="form-group full">
+                        <label for="bio">Professional bio</label>
+                        <textarea id="bio" name="bio" rows="4"
+                            placeholder="Tell us about yourself, your experience, and what you're working on…"></textarea>
+                    </div>
 
-    <div class="modal-overlay" hidden>
-        <section>
-            <h2>Your Profile</h2>
-        </section>
+                    <!-- Checkboxes -->
+                    <div class="form-group checkbox-group full">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I accept the <a href="#">Terms and Conditions</a></label>
+                    </div>
+
+                    <div class="form-group checkbox-group full">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Subscribe to the DevProfile newsletter</label>
+                    </div>
+
+                </div>
+
+                <!-- Actions -->
+                <div class="btn-row">
+                    <a href="#modal-overlay" class="btn-primary">
+                    <i class="fa-solid fa-id-card" style="margin-right:8px;"></i>
+                    View profile
+                    </a>
+                    <button type="reset" class="btn-ghost">Reset</button>
+                </div>
+
+            </form>
+
+        </main>
     </div>
+
+
+
+
+    <!-- ────────────────────── Modal Overlay ───────────────────── -->
+    <div class="modal-overlay" id="modal-overlay">
+
+        <div class="modal-card">
+            <div class="modal-inner">
+
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modal-heading">Your profile</h2>
+                    <a href="#" class="modal-close">
+                    <i class="fa-solid fa-xmark"></i>
+                    </a>
+                </div>
+
+                <!-- Avatar -->
+                <div class="profile-avatar" id="modal-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <!-- Name + badge -->
+                <p class="profile-name" id="modal-name">Haneen Alhajali</p>
+                <div style="text-align:center;">
+                    <span class="profile-skill-badge" id="modal-skill">Frontend</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Bio -->
+                <div class="profile-section">
+                    <p class="profile-bio-label">Bio</p>
+                    <p class="profile-bio-text" id="modal-bio">No bio provided.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
 </body>
+
 </html>

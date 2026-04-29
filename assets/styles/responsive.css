@@ -1,0 +1,60 @@
+/* ─────────────────────── Tablet ───────────────────────────── */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 20px 24px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .glass {
+    padding: 32px 24px;
+  }
+
+  .login-card {
+    max-width: 100%;
+  }
+
+  /* collapse two-col grid to one column */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    max-width: 100%;
+  }
+
+  .modal-inner {
+    padding: 28px 24px;
+  }
+
+  .btn-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ───────────────────── Mobile ─────────────────────────────── */
+@media (max-width: 480px) {
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links li a {
+    font-size: 10px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .profile-wrapper {
+    padding: 40px 12px;
+  }
+
+  .modal-card {
+    border-radius: var(--radius-md);
+  }
+}
